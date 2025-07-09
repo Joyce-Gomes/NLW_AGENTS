@@ -1,3 +1,9 @@
+* {
+    margin: 0; /* top-right-bottom-left MARGIN SEMPRE ESTERNO */
+    padding: 0;  /* PADDING SEMPRE INTERNO */
+    box-sizing: border-box; /* width e height considerando padding e border */
+}
+
 body {
     background-image: url("./assets/bg.jpg");
     background-repeat: no-repeat; /* keyword */
@@ -5,4 +11,103 @@ body {
     background-position: top center; /* vertical horizontal */
     background-color: #121214; /* HEX: RR, GG, BB */
     color: white;
+}
+
+body *,
+:root {
+    font-family: "Inter", sans-serif; 
+    line-height: 160%;
+}
+
+header {
+   padding-top: 2rem;
+   text-align: center; /* top-bottom left-right */
+} /* header é o topo do site */ /* PIXEL é a unidade de medida mais comum em CSS  1920 x 1080 */
+
+header img {
+    width: 15rem; /* largura */ /*REM é a unidade de medida relativa ao tamanho da fonte do elemento raiz. Por padrão ela é 16px*/
+}
+
+main {
+    max-width: 36rem; /* largura máxima */
+    width: 90%; /* largura relativa */
+    margin: 3rem auto; /* centralizar horizontalmente Olhar como se fosee um relógio 1º nº é o 12, 3, 6, e 9*/
+}
+
+section {
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    border-radius: 0.625rem;
+    padding-top: 4px; /* padding é o espaçamento interno */
+}
+
+section > div {
+    padding: 2%;
+    padding-top: 1.5rem; /* padding é o espaçamento interno */
+    border-radius: 0.5rem; /* borda arredondada */
+    background-color: #2A2634; /* cor de fundo */
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/* aNIMAÇÕRD */
+main section {
+    opacity: 0; /* opacidade inicial */
+    transform: translateY(2rem); /* deslocamento vertical inicial */
+
+    animation-name: appear; /* nome da animação */
+    animation-duration: 700ms; /* duração da animação */
+    animation-fill-mode: forwards; /* manter o estado final da animação */
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1; /* opacidade inicial */
+        transform: translateY(0); /* deslocamento vertical */
+    }    
+}
+
+form {
+    display: flex; /* exibir como flexbox */   
+    gap: 0.85rem; /* espaçamento entre os elementos */
+    flex-wrap: wrap; /* quebra de linha automática */
+    margin: 1.25rem 0;
+}
+
+input, select {
+    all: unset; /* remover todos os estilos padrão */
+    border: 2px solid #9147ff; /* borda */
+    border-radius: 0.5rem; /* borda arredondada */
+    padding: 0.675rem; /* espaçamento interno */
+    font-size: 0.875rem; /* tamanho da fonte */
+    background-color: #00000066; /* cor de fundo com opacidade */       
+}
+
+input {
+    flex: 1; /* ocupar todo o espaço disponível */
+}
+
+button {
+    width: 100%; /* ocupar toda a largura do elemento pai */
+    border: 0; /* remover borda */
+    background-image: linear-gradient(245deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); /* gradiente de fundo */
+    padding: 0.675rem; /* espaçamento interno */
+    border-radius: 0.5rem; /* borda arredondada */
+    font-weight: bold; /* negrito */
+    text-transform: uppercase; /* transformar texto em maiúsculas */
+    letter-spacing: 0.12px; /* espaçamento entre letras */
+
+    transition: all 0.3s; /* transição suave para todas as propriedades */
+}
+
+button:hover {
+    cursor: pointer;/* escurecer o botão ao passar o mouse */
+    transform: translateY(-2px); /* deslocamento vertical ao passar o mouse */
+    box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2); /* sombra ao passar o mouse */
 }
