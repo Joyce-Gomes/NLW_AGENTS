@@ -31,7 +31,7 @@ header img {
 main {
     max-width: 36rem; /* largura máxima */
     width: 90%; /* largura relativa */
-    margin: 3rem auto; /* centralizar horizontalmente Olhar como se fosee um relógio 1º nº é o 12, 3, 6, e 9*/
+    margin: 3rem auto; /* centralizar horizontalmente Olhar como se fosse um relógio 1º nº é o 12, 3, 6, e 9*/
 }
 
 section {
@@ -110,4 +110,42 @@ button:hover {
     cursor: pointer;/* escurecer o botão ao passar o mouse */
     transform: translateY(-2px); /* deslocamento vertical ao passar o mouse */
     box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2); /* sombra ao passar o mouse */
+}
+
+button:disabled {
+    transition: initial;
+    transform: initial;
+    box-shadow: initial;
+    cursor: not-allowed;
+    color: black;
+}
+
+#aiResponse {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border-left: 4px solid #43E7AD;
+}
+
+#aiResponse ul {
+    padding-left: 1.5rem;
+    opacity: 0.8;
+}
+
+#aiResponse p {
+    color: white;
+}
+
+.loading {
+    animation: pulse 1s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
 }
